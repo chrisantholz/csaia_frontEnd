@@ -3,10 +3,30 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { LoginComponent } from './login/login.component';
+import { LandingComponent } from './landing/landing.component';
+import { FlightPageComponent } from './flight-page/flight-page.component';
+import { UploadFlightsComponent } from './upload-flights/upload-flights.component';
+import { QueryFlightsComponent } from './query-flights/query-flights.component';
+import { DownloadFlightsComponent } from './download-flights/download-flights.component';
+import { GenOrthoComponent } from './gen-ortho/gen-ortho.component';
+import { AccountSettingsComponent } from './account-settings/account-settings.component';
+import { AdminSettingsComponent } from './admin-settings/admin-settings.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NavBarComponent,
+    LoginComponent,
+    LandingComponent,
+    FlightPageComponent,
+    UploadFlightsComponent,
+    QueryFlightsComponent,
+    DownloadFlightsComponent,
+    GenOrthoComponent,
+    AccountSettingsComponent,
+    AdminSettingsComponent
   ],
   imports: [
     BrowserModule,
