@@ -1,57 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
+
 <body>
     <div class="p-2 container-fluid mb-3">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-              <li class="breadcrumb-item"><a style="color:black" routerLink="/Landing">CSAIA</a></li>
-              <li class="breadcrumb-item"><a style="color:black" routerLink="/FlightPage">Flights</a></li>
-              <li class="breadcrumb-item active" aria-current="page">Query Flights</li>
+                <li class="breadcrumb-item"><a style="color:black" routerLink="/Landing">CSAIA</a></li>
+                <li class="breadcrumb-item"><a style="color:black" routerLink="/FlightPage">Flights</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Query Flights</li>
             </ol>
-          </nav>
+        </nav>
     </div>
     <div class="container-fluid">
         <h2 class="border-bottom">Query Flight Images</h2>
     </div>
     <div class="container-fluid">
-        <div class="card border" style="max-width: 30rem">
-            <div class="card-title"><h5 class="p-3">Query CSAIA for airial photographs:</h5></div>
+        <div class="card border">
+            <div class="card-title">
+                <h5 class="p-3">Query CSAIA for aerial photographs:</h5>
+            </div>
             <div class="card-body">
                 <form>
-                    <div class="input-group mb-1">
-                        <span class="input-group-text">Query Param</span>
-                        <input type="text" class="form-control" placeholder="Query Param">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col">
+                                <div class="input-group mb-1">
+                                    <input id="image-ids" type="text" class="form-control" placeholder="Image IDs">
+                                </div>
+                                <div class="input-group mb-1">
+                                    <input id="flight-ids" type="text" class="form-control" placeholder="Flight IDs">
+                                </div>
+                                <div class="input-group mb-1">
+                                    <input id="user-ids" type="text" class="form-control" placeholder="User IDs">
+                                </div>
+                                <div class="input-group mb-1">
+                                    <input id="extensions" type="text" class="form-control" placeholder="Extensions">
+                                </div>
+                                <div class="input-group mb-1">
+                                    <input id="time-range" type="text" class="form-control" placeholder="Time Range">
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="input-group mb-1">
+                                    <input id="latitude-range" type="text" class="form-control" placeholder="Latitude Range">
+                                </div>
+                                <div class="input-group mb-1">
+                                    <input id="longitude-range" type="text" class="form-control" placeholder="Longitude Range">
+                                </div>
+                                <div class="input-group mb-1">
+                                    <input id="altitude-range" type="text" class="form-control" placeholder="Altitude Range">
+                                </div>
+                                <div class="input-group mb-1">
+                                    <input id="make" type="text" class="form-control" placeholder="Make">
+                                </div>
+                                <div class="input-group mb-1">
+                                    <input id="model" type="text" class="form-control" placeholder="Model">
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="input-group mb-1">
-                        <span class="input-group-text">Query Param</span>
-                        <input type="text" class="form-control" placeholder="Query Param">
-                    </div>
-                    <div class="input-group mb-1">
-                        <span class="input-group-text">Query Param</span>
-                        <input type="text" class="form-control" placeholder="Query Param">
-                    </div>
-                    <div class="input-group mb-1">
-                        <span class="input-group-text">Query Param</span>
-                        <input type="text" class="form-control" placeholder="Query Param">
-                    </div>
-                    <div class="input-group mb-1">
-                        <span class="input-group-text">Query Param</span>
-                        <input type="text" class="form-control" placeholder="Query Param">
-                    </div>
-                    <div class="input-group mb-3">
-                        <span class="input-group-text">Query Param</span>
-                        <input type="text" class="form-control" placeholder="Query Param">
-                    </div>
-                    <button class="p-2 btn btn-outline-success">Query</button>
+
+
                 </form>
+                <button class="p-2 btn btn-success send" (click)="sendQuery()">Query</button>
             </div>
         </div>
     </div>
+    <div class="container-fluid" *ngIf="results.length > 0">
+        <table class="table">
+            <thead>
+                <th scope="col">Image ID</th>
+                <th scope="col">User ID</th>
+                <th scope="col">Flight ID</th>
+                <th scope="col">Image Extension</th>
+                <th scope="col">Date/Time Captured</th>
+                <th scope="col">Latitude</th>
+                <th scope="col">Longitude</th>
+                <th scope="col">Altitude</th>
+                <th scope="col">Download</th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let result of results">
+                    <td>{{result.id}}</td>
+                    <td>{{result.user_id}}</td>
+                    <td>{{result.flight_id}}</td>
+                    <td>{{result.image_extension}}</td>
+                    <td>{{result.datetime}}</td>
+                    <td>{{result.latitude}}</td>
+                    <td>{{result.longitude}}</td>
+                    <td>{{result.altitude}}</td>
+                    <td>
+                        <input class="form-check-input" type="checkbox" [checked]="result.selected" (change)="result.selected = !result.selected" id="flexCheckDefault">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <button class="btn btn-success download" (click)="download()">Download</button>
+    </div>
 </body>
-</html>
 
+</html>
