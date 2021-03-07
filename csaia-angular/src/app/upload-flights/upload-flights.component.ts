@@ -1,5 +1,4 @@
 import { HttpClient } from '@angular/common/http';
-import { ThisReceiver } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -40,10 +39,12 @@ export class UploadFlightsComponent implements OnInit {
     formData.append('field_name',  (<HTMLInputElement>document.getElementById('field-name')).value);
     formData.append('crop',  (<HTMLInputElement>document.getElementById('crop')).value);
 
-    console.log(formData)
-
     this.http.post('http://127.0.0.1:5000/upload-flight', formData).subscribe(result => {
-      console.log(result);
+      (<HTMLInputElement>document.getElementById('flight-name')).value = "";
+      (<HTMLInputElement>document.getElementById('flight-notes')).value = "";
+      (<HTMLInputElement>document.getElementById('field-name')).value = "";
+      (<HTMLInputElement>document.getElementById('crop')).value = "";
+      (<HTMLInputElement>document.getElementById('flight-images')).value = null;
     });
   }
 
