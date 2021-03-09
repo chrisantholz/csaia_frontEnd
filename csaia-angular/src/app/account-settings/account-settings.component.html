@@ -9,13 +9,39 @@
     <div class="p-2 container-fluid mb-3">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-              <li class="breadcrumb-item"><a style="color:black" href="/Landing">CSAIA</a></li>
+              <li class="breadcrumb-item"><a style="color:black" routerLink="/Landing">CSAIA</a></li>
               <li class="breadcrumb-item active" aria-current="page">Account Settings</li>
             </ol>
           </nav>
     </div>
-    <div class="container-fluid">
+    <div class="container-fluid mb-5">
         <h2 class="border-bottom">Account Settings</h2>
+    </div>
+    <div class="container-fluid p-3">
+        <div class="p-3 card container-fluid" style="max-width: 40rem;margin-left:auto;margin-right:auto;">
+            <div class="card-title"><h3 class="p-3 border-bottom">View Account Info and Settings Below:</h3></div>
+            <div class="card-body">
+                <div class="row border-bottom">
+                    <div class="col-4">
+                        <label class="">Current Username:</label>
+                    </div>
+                    <div class="col-8">
+                        <span>USERNAME</span>
+                    </div>
+                </div>
+                <div class="row border-bottom">
+                    <div class="mt-5 col-4">
+                        <label class="">Current Password:</label>
+                    </div>
+                    <div class="mt-5 col-8">
+                        <span>PASSWORD</span>
+                    </div>
+                </div>
+                <div class="mt-5" style="max-width: 40rem;margin-left:auto;margin-right:auto;text-align:center;">
+                    <button class="btn btn-outline-success" routerLink="/EditAccountSettings">Edit</button>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 </html>

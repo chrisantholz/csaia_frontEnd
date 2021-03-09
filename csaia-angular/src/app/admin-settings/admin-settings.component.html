@@ -9,13 +9,44 @@
     <div class="p-2 container-fluid mb-3">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-              <li class="breadcrumb-item"><a style="color:black" href="/Landing">CSAIA</a></li>
+              <li class="breadcrumb-item"><a style="color:black" routerLink="/Landing">CSAIA</a></li>
               <li class="breadcrumb-item active" aria-current="page">Admin Settings</li>
             </ol>
           </nav>
     </div>
-    <div class="container-fluid">
+    <div class="container-fluid mb-5">
         <h2 class="border-bottom">Admin Settings</h2>
+    </div>
+    <div class="container-fluid">
+        <div class="row justify-content-evenly p-3">
+            <div class="p-3 col-lg-3 card">
+                <div class="card-title border-bottom"><h5 class="p-3">File Deletion</h5></div>
+                <div class="contianer-fluid px-1">
+                    <div class="card-body">
+                        <p>Delete image files from CSAIA.</p>
+                        <a class="btn btn-outline-primary">Delete Images</a>
+                    </div>
+                </div>
+            </div>
+            <div class="p-3 col-lg-3 card">
+                <div class="card-title border-bottom"><h5 class="p-3">Role Management</h5></div>
+                <div class="contianer-fluid px-1">
+                    <div class="card-body">
+                        <p>Manage the rolls of users in CSAIA.</p>
+                        <a class="btn btn-outline-primary">Manage Roles</a>
+                    </div>
+                </div>
+            </div>
+            <div class="p-3 col-lg-3 card">
+                <div class="card-title border-bottom"><h5 class="p-3">Create and Delete Accounts</h5></div>
+                <div class="contianer-fluid px-1">
+                    <div class="card-body">
+                        <p>Create and delete user accounts on CSAIA.</p>
+                        <a class="btn btn-outline-primary">Manage Accounts</a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 </html>

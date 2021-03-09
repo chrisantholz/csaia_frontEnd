@@ -9,6 +9,7 @@ import { FlightPageComponent } from './flight-page/flight-page.component';
 import { GenOrthoComponent } from './gen-ortho/gen-ortho.component';
 import { QueryFlightsComponent } from './query-flights/query-flights.component';
 import { UploadFlightsComponent } from './upload-flights/upload-flights.component'; 
+import { EditAccountSettingsComponent } from './edit-account-settings/edit-account-settings.component'
 
 const routes: Routes = [
   { path: '', redirectTo: '/Landing', pathMatch: 'full' },
@@ -21,6 +22,7 @@ const routes: Routes = [
   { path: 'GenOrtho', component: GenOrthoComponent },
   { path: 'QueryFlights', component: QueryFlightsComponent },
   { path: 'UploadFlights', component: UploadFlightsComponent },
+  { path: 'EditAccountSettings', component: EditAccountSettingsComponent},
 
 ];
 

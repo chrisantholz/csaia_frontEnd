@@ -14,6 +14,7 @@ import { DownloadFlightsComponent } from './download-flights/download-flights.co
 import { GenOrthoComponent } from './gen-ortho/gen-ortho.component';
 import { AccountSettingsComponent } from './account-settings/account-settings.component';
 import { AdminSettingsComponent } from './admin-settings/admin-settings.component';
+import { EditAccountSettingsComponent } from './edit-account-settings/edit-account-settings.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { AdminSettingsComponent } from './admin-settings/admin-settings.componen
     DownloadFlightsComponent,
     GenOrthoComponent,
     AccountSettingsComponent,
-    AdminSettingsComponent
+    AdminSettingsComponent,
+    EditAccountSettingsComponent
   ],
   imports: [
     BrowserModule,

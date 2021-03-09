@@ -1,0 +1,8 @@
+.btn-outline-primary, .btn-outline-primary:visited {
+    border-color: lightskyblue !important;
+    color: lightskyblue !important;
+}
+.btn-outline-primary:hover, .btn-outline-primary:active {
+    background-color:lightskyblue !important;
+    color: #343a40 !important;
+}
